@@ -1,9 +1,9 @@
 # Nanoboy
 
-nanoboy is a little ruby gem that allows you to extend classes and/or modules with your own modules with several advantages:
+nanoboy is a little ruby gem that allows you to extend classes and/or modules with several advantages over the usual ruby include/extend:
 
- * lazy extension  -- the extended class is not loaded if it's not already loaded. The extension will be applied once the class is loaded. 
- * persistent on class reloading -- if you are developing in Rails, where classes are reloaded on each request, use this and forget of callbacks and hacks
+ * lazy extension  -- the extended class is not loaded if it's not already in the memory. The extension will be applied once the class is loaded.
+ * persistent on class reloading -- if you are developing in Rails, where classes are reloaded on each request, use nanoboy and forget about reloading problems and callbacks.
 
 Due to the lazy extension feature, this gem is specially useful when you have loading order problems. For example, if you are extending a lib that is extending another lib. Yes, these things happen.
 
@@ -17,12 +17,13 @@ There are two possible syntaxes:
 
 ```ruby
 Nanoboy.include! :ClassToExtend, MyAwesomeModule
-
+```
 
 * Sugared
 
 ```ruby
 :ClassToExtend.include! MyAwesomeModule
+```
 
 About the name
 --------------
