@@ -1,0 +1,2 @@
+module Nanoboy
+end
