@@ -25,6 +25,14 @@ Nanoboy.include! :ClassToExtend, MyAwesomeModule
 :ClassToExtend.include! MyAwesomeModule
 ```
 
+Note that the class to be extended is named with its symbol, not the constant. If you use the constant, it gets loaded and you lose.
+
+And yes it works with namespaces too:
+
+```ruby
+:"CrazyModule::ClassToExtend".include! MyAwesomeModule
+```
+
 About the name
 --------------
 
